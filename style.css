@@ -13,7 +13,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: ivory;
+  background-color: #EDE7F6;
 }
 
 .container {
@@ -25,19 +25,28 @@ body {
 
   border-radius: 12px;
 
-  background-color: bisque;
+  background-color: #D1C4E9;
 }
 
 .input-box{
+    font-size: 1rem;
+    color: #7E57C2;
+
+    background-color: #EDE7F6;
+    border-color: #7E57C2;
+
     display : block;
+    overflow: hidden;
 }
 
-.todo-list-box{
+.todo-list-box
+.done-list-box{
     display : block;
+    overflow: auto;
 }
 
 .done-list-box{
-    display : block;
+    font-style: oblique;
 }
 
 #todo-input{
