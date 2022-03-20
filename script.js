@@ -10,20 +10,18 @@ let todo = [];
 /* click 이벤트 발생 시에 input을 todo-list에 저장 */
 
 const addNewTodo = (e) => {
-    if(!inputBox.value){
-        alert('내용이 없어요.');
+    var list = document.createElement('li');
+    if(!todoInput.value){
+        alert('입력한 내용이 없어요!');
     }
     else{
-        todoList.appendChild(inputBox.value);
+        list.innerText = todoInput.value;
+        todoList.appendChild(list);
         todoInput.value = "";
     }
 }
 
-const setTodo = (newTodo) => {
-    todo = newTodo;
-}
-
-addNewTodo.addEventListener('click', addNewTodo);
+addTodoBtn.addEventListener('click', addNewTodo);
 
 /* todo-list와 done-list를 관리*/
 
