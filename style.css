@@ -29,32 +29,38 @@ body {
 }
 
 .input-box{
-    margin : 5% 5% 0% 5%;
-    padding : 0% 0% 2% 0%;
+    margin : 20px 20px 0px 20px;
+    padding : 0px 0px 5px 0px;
 
+    height : 20%;
     justify-content: space-between;
     display : block;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .todo-list-box{
-    margin : 0% 5% 0% 5%;
-    padding : 2% 0% 2% 0%;
+    margin : 0px 20px 0px 20px;
+    padding : 5px 0px 5px 0px;
+    height : 40%;
+
     display : block;
     overflow: auto;
 }
 
 .done-list-box{
-    margin : 0% 5% 5% 5%;
-    padding : 2% 0% 0% 0%;
+    margin : 0px 20px 20px 20px;
+    padding : 5px 0px 0px 0px;
+    height : 40%;
+
     display : block;
     overflow: auto;
 }
 
 #todo-input{
-    margin : 2%;
+    margin : 0px 5px 0px 0px;
     display : inline;
-    width: 90%;
+    width: 60vw;
+    height : 1.5rem;
 
     font-size: 1rem;
 
@@ -63,20 +69,40 @@ body {
     border-radius: 12px;
     border-color: #7E57C2;
 
+    overflow: hidden;
 }
 
 #add-todo-btn{
-    margin : 2%
+    margin : 0px 0px 0px 5px
     display : inline;
+}
+
+.todo-list{
+    font-size: 1rem;
+
+    color: #7E57C2;
+    background-color: #EDE7F6;
+    border-radius: 12px; 
+}
+
+.done-list{
+    font-size: 1rem;
+
+    color: #7E57C2;
+    background-color: #EDE7F6;
+    border-radius: 12px; 
 }
 
 h1{
     font-size: 3rem;
+    margin : 20px 20px 20px 20px
 }
 
 h3 {
     font-size: 1.5rem;
 }
+
+
 
 /*  <div class="container">
       <h1>투두</h1>
