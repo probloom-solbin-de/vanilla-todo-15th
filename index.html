@@ -3,12 +3,26 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vanilla Todo</title>
+    <title>당신 옆의 할 일 관리 도구 투두📚</title>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <div class="container"></div>
+    <div class="container">
+      <h1>투두</h1>
+      <form class="input-box">
+        <input id="todo-input" placeholder="오늘 할 일을 입력하세요." />
+        <button id="add-todo-btn">+</button>
+      </form>
+      <section class="todo-list-box">
+        <h3 id="todo-list-title">오늘 할 일은 다음과 같아요.</h3>
+        <ol class="todo-list"></ol>
+      </section>
+      <section class="done-list-box">
+        <h3 id="done-list-title">이미 다음과 같은 일들을 처리했어요.</h3>
+        <ol class="done-list"></ol>
+      </section>
+    </div>
   </body>
   <script src="script.js"></script>
 </html>
