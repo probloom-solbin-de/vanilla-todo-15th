@@ -18,6 +18,7 @@ body {
 
 .container {
   width: 70vw;
+  height : 80vh;
   justify-content: center;
 
   display: flex;
@@ -58,11 +59,10 @@ body {
 
 #todo-input{
     margin : 0px 5px 0px 0px;
-    display : inline;
-    width: 60vw;
-    height : 1.5rem;
+    display : inline-block;
+    height : 3rem;
 
-    font-size: 1rem;
+    font-size: 1.5rem;
 
     color: #7E57C2;
     background-color: #EDE7F6;
@@ -74,7 +74,8 @@ body {
 
 #add-todo-btn{
     margin : 0px 0px 0px 5px
-    display : inline;
+    display : inline-block;
+    
 }
 
 .todo-list{
