@@ -29,33 +29,44 @@ body {
 }
 
 .input-box{
-    font-size: 1rem;
-    color: #7E57C2;
+    margin : 5% 5% 0% 5%;
+    padding : 0% 0% 2% 0%;
 
-    background-color: #EDE7F6;
-    border-color: #7E57C2;
-
+    justify-content: space-between;
     display : block;
     overflow: hidden;
 }
 
-.todo-list-box
-.done-list-box{
+.todo-list-box{
+    margin : 0% 5% 0% 5%;
+    padding : 2% 0% 2% 0%;
     display : block;
     overflow: auto;
 }
 
 .done-list-box{
-    font-style: oblique;
+    margin : 0% 5% 5% 5%;
+    padding : 2% 0% 0% 0%;
+    display : block;
+    overflow: auto;
 }
 
 #todo-input{
+    margin : 2%;
     display : inline;
-    width : 35vw;
+    width: 90%;
+
+    font-size: 1rem;
+
+    color: #7E57C2;
+    background-color: #EDE7F6;
+    border-radius: 12px;
+    border-color: #7E57C2;
 
 }
 
 #add-todo-btn{
+    margin : 2%
     display : inline;
 }
 
