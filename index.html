@@ -6,13 +6,16 @@
     <title>당신 옆의 할 일 관리 도구 투두📚</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
     <div class="container">
       <h1>투두</h1>
       <form class="input-box">
-        <input id="todo-input" placeholder="오늘 할 일을 입력하세요." />
-        <button id="add-todo-btn">+</button>
+        <input
+          type="text"
+          id="todo-input"
+          placeholder="오늘 할 일을 입력하세요."
+        />
+        <input type="button" value="+" onclick="addNewTodo()" />
       </form>
       <section class="todo-list-box">
         <h3 id="todo-list-title">오늘 할 일은 다음과 같아요.</h3>

@@ -26,7 +26,7 @@ const addNewTodo = function () {
 
 /* click 이벤트 발생 시에 input을 todo-list에 저장 */
 
-addTodoBtn.addEventListener('click', addNewTodo);
+/*addTodoBtn.addEventListener('click', addNewTodo);*/
 
 /* todo-list와 done-list를 관리*/
 
