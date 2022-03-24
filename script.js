@@ -13,18 +13,35 @@ const doneList = document.querySelector('.done-list');
 3. 한일/할일 리스트에서 영구 삭제, 페이지에 표시하지 않기  
 */
 
+/* 전역변수 todo에 한일/할일 모두 저장된다. */
+
+let todo = [];
+
 /* click 이벤트 발생 시에 input을 todo-list에 저장 */
 
+const function MakeTodo(todoText,isItDone){
+    return {
+        todoText,
+        isItDone
+    }
+}
+
 const function addNewTodo(){
-    var list = document.createElement('li');
     if (!todoInput.value) {
         alert('입력한 내용이 없어요!');
     } else {
-        list.innerText = todoInput.value;
-        todoList.appendChild(list);
-        todoInput.value = '';
+            todo.push(MakeTodo(todoInput.value, false));
+        }
     }
+    showTask();
 };
+
+const function showTask(){
+    todo.forEach(todoText){
+        newTodo = <li>${todoText}</li>
+    }
+    todoList.innerHTML = newTodo;
+}
 
 /* click 이벤트 발생 시에 input을 todo-list에 저장 */
 
