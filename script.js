@@ -29,8 +29,8 @@ const makeTodo = function(todoText,isItDone){
 
 const showTask = function(){
     console.log("showTask is running.");
-    todo.forEach(todoText){
-        newTodo = <li>${todoText}</li>
+    todo.forEach(item){
+        newTodo = <li>${item}</li>
     }
     todoList.innerHTML = newTodo;
 }
