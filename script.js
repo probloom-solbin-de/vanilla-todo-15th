@@ -23,8 +23,9 @@ class newTodo {
 }
 
 const saveTodo = function (todoText) {
-  const newTodo = new newTodo(todoText);
-  todo.push(newTodo);
+  console.log('savetodo is running.');
+  const newtodo = new newTodo(todoText);
+  todo.push(newtodo);
   localStorage.setItem(TODO, JSON.stringify(todo));
 };
 
@@ -52,11 +53,12 @@ const addNewTodo = function () {
 };
 
 const loadTodoList = function () {
+  console.log('loadtodolist is running.');
   const loadedTodoList = localStorage.getItem(TODO);
   if (loadedTodoList != null) {
     const parsedTodo = JSON.parse(loadedTodoList);
-    for (let todo of parsedTodo) {
-      const { inputText } = todo;
+    for (let Todo of parsedTodo) {
+      const { inputText } = Todo;
       addTodo(inputText);
     }
   }
@@ -64,6 +66,7 @@ const loadTodoList = function () {
 
 const init = function () {
   loadTodoList();
+  console.log('Init is running.');
 };
 
 init();
