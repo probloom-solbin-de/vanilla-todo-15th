@@ -11,6 +11,7 @@ const todoList = document.getElementById('todo-list');
 /* 1. 입력한 내용 할일 리스트에 추가
 click 이벤트 발생 시에 input을 todo-list에 저장 
 */
+const TODO = "todo";
 const todo = [];
 
 class newTodo {
@@ -25,7 +26,7 @@ const saveTodo = function (todoText) {
   console.log('savetodo is running.');
   const newtodo = new newTodo(todoText);
   todo.push(newtodo);
-  localStorage.setItem('todo', JSON.stringify(todo));
+  localStorage.setItem(TODO, JSON.stringify(todo));
 };
 
 /* HTML todoList 요소에  */
@@ -38,6 +39,7 @@ const paintTodo = function (inputText) {
 
 const addTodo = function (inputText) {
   paintTodo(inputText);
+  todoInput.value = '';
   saveTodo(inputText);
 };
 
@@ -47,7 +49,6 @@ const addNewTodo = function () {
     alert('입력한 내용이 없어요!');
   } else {
     addTodo(inputText);
-    todoInput.value = '';
   }
 };
 
@@ -56,7 +57,7 @@ const loadTodoList = function () {
   const loadedTodoList = localStorage.getItem(TODO);
   if (loadedTodoList != null) {
     const parsedTodoList = JSON.parse(loadedTodoList);
-    for (let Todo of parsedTodoList) {
+    for (let Todo of parsedTodoList {
       const inputText = Todo;
       addTodo(inputText);
     }
@@ -69,3 +70,11 @@ const init = function () {
 };
 
 init();
+
+/* 1. 할일 리스트를 클릭하면 한일로 이동, 한일 리스트를 클릭하면 할일로 이동
+click 이벤트 발생 시에 input을 todo-list에 저장 
+*/
+
+/* todo-list와 done-list를 관리*/
+
+/* todo-list와 done-list가 0개 이하로 떨어지지 않도록 관리 */
