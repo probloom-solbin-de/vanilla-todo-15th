@@ -39,6 +39,7 @@ const paintTodo = function (inputText) {
 const addTodo = function (inputText) {
   paintTodo(inputText);
   todoInput.value = '';
+  saveTodo(inputText);
 };
 
 const addNewTodo = function () {
@@ -57,7 +58,6 @@ const loadTodoList = function () {
     for (let todo of parsedTodo) {
       const { inputText } = todo;
       addTodo(inputText);
-      saveTodo(item);
     }
   }
 };
