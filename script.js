@@ -11,24 +11,34 @@ const todoList = document.getElementById('todo-list');
 /* 1. 입력한 내용 할일 리스트에 추가
 click 이벤트 발생 시에 input을 todo-list에 저장 
 */
-const TODO = "todo";
+const TODO = 'todo';
 const todo = [];
 
-const saveTodo(todoText)= function() {
-    const newTodo = {
-        text : todoText,
-        id : todo.length +1;
-    };
-    todo.push(newTodo);
-    localStorage.setItem(TODO,JSON.stringify(todo));
+class newTodo {
+  constructor(todoText) {
+    this.text = todoText;
+    this.id = todo.length + 1;
+    this.done = false;
+  }
 }
 
+const saveTodo = function (todoText) {
+  const newTodo = new newTodo(todoText);
+  todo.push(newTodo);
+  localStorage.setItem(TODO, JSON.stringify(todo));
+};
+
 /* HTML todoList 요소에  */
-const paintTodo = function () {
+const paintTodo = function (inputText) {
   const newTodo = document.createElement('li');
   const newTodoText = document.createTextNode(inputText);
   newTodo.appendChild(newTodoText);
   todoList.appendChild(newTodo);
+};
+
+const addTodo = function (inputText) {
+  paintTodo(inputText);
+  todoInput.value = '';
 };
 
 const addNewTodo = function () {
@@ -36,26 +46,25 @@ const addNewTodo = function () {
   if (!inputText) {
     alert('입력한 내용이 없어요!');
   } else {
-    paintTodo();
-    todoInput.value = '';
+    addTodo(inputText);
   }
 };
 
-const loadTodoList = function()  {
-    const loadedTodoList = localStorage.getItem(TODO);
-    if(!loadTodoList){
-        const parsedTodoList = JSON.parse(loadTodoList);
-        for (let toDo of parsedTodoList){
-            const {text} = todo;
-            paintTodo(text);
-            saveTodo(text);
-        }
+const loadTodoList = function () {
+  const loadedTodoList = localStorage.getItem(TODO);
+  if (loadedTodoList != null) {
+    const parsedTodo = JSON.parse(loadedTodoList);
+    for (let todo of parsedTodo) {
+      const { inputText } = todo;
+      addTodo(inputText);
+      saveTodo(item);
     }
-}
+  }
+};
 
-const function init(){
-loadTodoList();
-}
+const init = function () {
+  loadTodoList();
+};
 
 init();
 
