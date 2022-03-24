@@ -8,11 +8,12 @@ const todoList = document.getElementById('todo-list');
 3. 한일/할일 리스트에서 영구 삭제, 페이지에 표시하지 않기  
 */
 
-/* 1. 입력한 내용 할일 리스트에 추가
+/* 
+1. 입력한 내용 할일 리스트에 추가
 click 이벤트 발생 시에 input을 todo-list에 저장 
 */
 const TODO = 'todo';
-const todo = [];
+let todo = [];
 
 class newTodo {
   constructor(todoText) {
@@ -29,12 +30,25 @@ const saveTodo = function (todoText) {
   localStorage.setItem(TODO, JSON.stringify(todo));
 };
 
+const deleteTodo = function (event) {
+  const button = event.target;
+  const index = button.parentNode;
+  todoList.removeChild(index);
+  todo = todo.filter((toDo) => toDo.id !== Number(index.id));
+  localStorage.setItem(TODO, JSON.stringify(todo));
+};
+
 /* HTML todoList 요소에  */
 const paintTodo = function (inputText) {
   const newTodo = document.createElement('li');
   const newTodoText = document.createTextNode(inputText);
+  const deleteBtn = document.createElement('button');
+  deleteBtn.src = 'url(/img/bin.png)';
+  deleteBtn.addEventListener('click', deleteTodo);
   newTodo.appendChild(newTodoText);
-  todoList.appendChild(newTodo);
+  newTodo.appendChild(deleteBtn);
+  newTodo.id = todo.length + 1;
+  newTodo.done ? doneList.append(newTodo) : todoList.append(newTodo);
 };
 
 const addTodo = function (inputText) {
