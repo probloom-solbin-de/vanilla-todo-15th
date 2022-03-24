@@ -58,7 +58,7 @@ const loadTodoList = function () {
   if (loadedTodoList != null) {
     const parsedTodoList = JSON.parse(loadedTodoList);
     for (let Todo of parsedTodoList) {
-      const inputText = Todo;
+      const inputText = Todo.text;
       addTodo(inputText);
     }
   }
@@ -70,11 +70,3 @@ const init = function () {
 };
 
 init();
-
-/* 1. 할일 리스트를 클릭하면 한일로 이동, 한일 리스트를 클릭하면 할일로 이동
-click 이벤트 발생 시에 input을 todo-list에 저장 
-*/
-
-/* todo-list와 done-list를 관리*/
-
-/* todo-list와 done-list가 0개 이하로 떨어지지 않도록 관리 */
