@@ -84,6 +84,7 @@ const paintTodo = function () {
     li.appendChild(deleteBtn);
     element.done ? doneList.append(li) : todoList.append(li);
   });
+  saveTodo();
 };
 
 const loadTodoList = function () {
