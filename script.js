@@ -31,6 +31,7 @@ const saveTodo = function () {
 };
 
 const toggleTodo = function (event) {
+  ID = 1;
   console.log('toggle is running');
   const list = event.target;
   const index = list.parentNode;
@@ -39,15 +40,22 @@ const toggleTodo = function (event) {
       element.done = !element.done;
     }
   });
+  todo.forEach((element) => {
+    element.id = ID++;
+  });
   saveTodo();
   loadTodoList();
 };
 
 const deleteTodo = function (event) {
+  ID = 1;
   console.log('delete is running');
   const button = event.target;
   const index = button.parentNode;
   todo = todo.filter((toDo) => toDo.id !== Number(index.id));
+  todo.forEach((element) => {
+    element.id = ID++;
+  });
   saveTodo();
   loadTodoList();
 };
