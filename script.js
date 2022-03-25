@@ -1,6 +1,7 @@
 const todoInput = document.getElementById('todo-input');
 const addTodoBtn = document.getElementById('add-todo-btn');
 const todoList = document.getElementById('todo-list');
+const doneList = document.getElementById('done-list');
 
 /* 기획 
 1. 입력한 내용 할일 리스트에 추가
@@ -14,6 +15,7 @@ click 이벤트 발생 시에 input을 todo-list에 저장
 */
 const TODO = 'todo';
 let todo = [];
+let ID = 0;
 
 class newTodo {
   constructor(todoText) {
@@ -23,38 +25,31 @@ class newTodo {
   }
 }
 
-const saveTodo = function (todoText) {
-  console.log('savetodo is running.');
-  const newtodo = new newTodo(todoText);
-  todo.push(newtodo);
+const saveTodo = function () {
+  console.log('save is running');
   localStorage.setItem(TODO, JSON.stringify(todo));
+};
+
+const toggleTodo = function (event) {
+  console.log('toggle is running');
+  const list = event.target;
+  const index = list.parentNode;
+  todo.forEach((element) => {
+    if (element.id === Number(index.id)) {
+      element.done = !element.done;
+    }
+  });
+  saveTodo();
+  loadTodoList();
 };
 
 const deleteTodo = function (event) {
+  console.log('delete is running');
   const button = event.target;
   const index = button.parentNode;
-  todoList.removeChild(index);
   todo = todo.filter((toDo) => toDo.id !== Number(index.id));
-  localStorage.setItem(TODO, JSON.stringify(todo));
-};
-
-/* HTML todoList 요소에  */
-const paintTodo = function (inputText) {
-  const newTodo = document.createElement('li');
-  const newTodoText = document.createTextNode(inputText);
-  const deleteBtn = document.createElement('button');
-  deleteBtn.src = 'url(/img/bin.png)';
-  deleteBtn.addEventListener('click', deleteTodo);
-  newTodo.appendChild(newTodoText);
-  newTodo.appendChild(deleteBtn);
-  newTodo.id = todo.length + 1;
-  newTodo.done ? doneList.append(newTodo) : todoList.append(newTodo);
-};
-
-const addTodo = function (inputText) {
-  paintTodo(inputText);
-  todoInput.value = '';
-  saveTodo(inputText);
+  saveTodo();
+  loadTodoList();
 };
 
 const addNewTodo = function () {
@@ -62,25 +57,46 @@ const addNewTodo = function () {
   if (!inputText) {
     alert('입력한 내용이 없어요!');
   } else {
-    addTodo(inputText);
+    const thisTodo = new newTodo(inputText);
+    todo.push(thisTodo);
+    saveTodo();
+    loadTodoList();
+    todoInput.value = '';
   }
 };
 
+/* HTML todoList 요소에  */
+const paintTodo = function () {
+  ID = 1;
+  todoList.innerHTML = '';
+  doneList.innerHTML = '';
+  todo.forEach((element) => {
+    const newCheckbox = document.createElement('button');
+    newCheckbox.addEventListener('click', toggleTodo);
+    const li = document.createElement('li');
+    li.id = ID++;
+    const newTodoText = document.createTextNode(element.text);
+    const deleteBtn = document.createElement('button');
+    deleteBtn.src = 'url(/img/bin.png)';
+    deleteBtn.addEventListener('click', deleteTodo);
+    li.appendChild(newCheckbox);
+    li.appendChild(newTodoText);
+    li.appendChild(deleteBtn);
+    element.done ? doneList.append(li) : todoList.append(li);
+  });
+};
+
 const loadTodoList = function () {
-  console.log('loadtodolist is running.');
   const loadedTodoList = localStorage.getItem(TODO);
   if (loadedTodoList != null) {
-    const parsedTodoList = JSON.parse(loadedTodoList);
-    for (let Todo of parsedTodoList) {
-      const inputText = Todo.text;
-      addTodo(inputText);
-    }
+    todo = JSON.parse(loadedTodoList);
+    paintTodo();
   }
 };
 
 const init = function () {
   loadTodoList();
-  console.log('Init is running.');
 };
 
 init();
+addTodoBtn.addEventListener('click', addNewTodo);
