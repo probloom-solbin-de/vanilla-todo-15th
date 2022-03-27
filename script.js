@@ -81,11 +81,12 @@ const paintTodo = function () {
   todo.forEach((element) => {
     const newCheckbox = document.createElement('button');
     newCheckbox.addEventListener('click', toggleTodo);
+    newCheckbox.innerText = '✔';
     const li = document.createElement('li');
     li.id = ID++;
     const newTodoText = document.createTextNode(element.text);
     const deleteBtn = document.createElement('button');
-    deleteBtn.src = 'url(/img/bin.png)';
+    deleteBtn.innerText = '✖';
     deleteBtn.addEventListener('click', deleteTodo);
     li.appendChild(newCheckbox);
     li.appendChild(newTodoText);
