@@ -106,7 +106,7 @@ align-items, justify-content 속성을 통해 내부 요소들의 배치를 유�
 - **디버깅 기능의 부족**
   - 브라우저는 에러를 보여주지 않기 때문에 문제가 있어도 모르고 넘어가는 경우가 있다.
   - 자바스크립트는 인터프리터 언어이기에
-- ## **객체지향의 개념적 지원 부족**
+- **객체지향의 개념적 지원 부족**
   - private 키워드를 지원하지 않는 브라우저가 많아 캡슐화에 한계가 있다.
   - 인터페이스 기능이 없어 추상화 기능이 부재한다.
 
@@ -134,10 +134,15 @@ align-items, justify-content 속성을 통해 내부 요소들의 배치를 유�
 > 참고자료
 
 [What, exactly, is the DOM?](https://bitsofco.de/what-exactly-is-the-dom/?utm_source=CSS-Weekly&utm_campaign=Issue-341&utm_medium=email)
+
 [DOM은 정확히 무엇일까?](https://wit.nts-corp.com/2019/02/14/5522)
+
 [How Browsers Work: Behind the scenes of modern web browsers](https://wit.nts-corp.com/2019/02/14/5522)
+
 [브라우저는 어떻게 동작하는가?](https://d2.naver.com/helloworld/59361)
+
 [MDN Introduction to the DOM](https://developer.mozilla.org/ko/docs/Web/API/Document_Object_Model/Introduction)
+
 [Pros and Cons of JavaScript](https://data-flair.training/blogs/advantages-disadvantages-javascript/)
 
 # 🤔 생각해볼 것
