@@ -30,6 +30,21 @@ const saveTodo = function () {
   localStorage.setItem(TODO, JSON.stringify(todo));
 };
 
+useEffect(() => {
+  const todoStorage = localStorage.getItem('todoList');
+  const doneStorage = localStorage.getItem('doneList');
+
+  // localStorage에 저장된 list가 있는지 확인
+  if (todoStorage) {
+    const loadTodo = JSON.parse(todoStorage);
+    setTodoList(loadTodo);
+  }
+  if (doneStorage) {
+    const loadDone = JSON.parse(doneStorage);
+    setDoneList(loadDone);
+  }
+}, []);
+
 const toggleTodo = function (event) {
   ID = 1;
   console.log('toggle is running');
