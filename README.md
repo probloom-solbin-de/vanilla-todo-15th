@@ -132,9 +132,13 @@ align-items, justify-content 속성을 통해 내부 요소들의 배치를 유�
   - 주석은 코드와 설계를 위한 기술적인 설명이 자리해야할 공간이다
 
 > 참고자료
-> [What, exactly, is the DOM?](https://bitsofco.de/what-exactly-is-the-dom/?utm_source=CSS-Weekly&utm_campaign=Issue-341&utm_medium=email)
-> ㄴ [DOM은 정확히 무엇일까?](https://wit.nts-corp.com/2019/02/14/5522) > [How Browsers Work: Behind the scenes of modern web browsers](https://wit.nts-corp.com/2019/02/14/5522)
-> ㄴ [브라우저는 어떻게 동작하는가?](https://d2.naver.com/helloworld/59361) > [MDN Introduction to the DOM](https://developer.mozilla.org/ko/docs/Web/API/Document_Object_Model/Introduction) > [Pros and Cons of JavaScript](https://data-flair.training/blogs/advantages-disadvantages-javascript/)
+
+[What, exactly, is the DOM?](https://bitsofco.de/what-exactly-is-the-dom/?utm_source=CSS-Weekly&utm_campaign=Issue-341&utm_medium=email)
+[DOM은 정확히 무엇일까?](https://wit.nts-corp.com/2019/02/14/5522)
+[How Browsers Work: Behind the scenes of modern web browsers](https://wit.nts-corp.com/2019/02/14/5522)
+[브라우저는 어떻게 동작하는가?](https://d2.naver.com/helloworld/59361)
+[MDN Introduction to the DOM](https://developer.mozilla.org/ko/docs/Web/API/Document_Object_Model/Introduction)
+[Pros and Cons of JavaScript](https://data-flair.training/blogs/advantages-disadvantages-javascript/)
 
 # 🤔 생각해볼 것
 
